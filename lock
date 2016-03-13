@@ -20,4 +20,4 @@ convert "$scr"  "$icon" -gravity center -composite -matte "$scr"
 convert "$scr" \
 	-gravity center -pointsize 20 \
 	-fill "#EAE4D1" -annotate +0+200 "$fortune" "$scr"
-i3lock -u -i "$scr"
+i3lock -ui "$scr"
