@@ -9,15 +9,10 @@ gradientColor='#E84C3D'
 gradientDimensions='1600x450'
 
 scrot "$scr"
-# Downscale then upscale for pixelated effect
-convert "$scr" -scale 10% -scale 1000% "$scr"
-# Add gradient
-convert "$scr" -size "$gradientDimensions" -gravity south-west \
-	gradient:none-"$gradientColor" -composite -matte "$scr"
-# Put lock icon on image
-convert "$scr"  "$icon" -gravity center -composite -matte "$scr"
-# Add fortune text
-convert "$scr" \
+convert "$scr" -scale 10% -scale 1000%\
+	-size "$gradientDimensions" -gravity south-west \
+	gradient:none-"$gradientColor" -composite -matte \
+	"$icon" -gravity center -composite -matte \
 	-gravity center -pointsize 20 \
 	-fill "#EAE4D1" -annotate +0+200 "$fortune" "$scr"
 i3lock -ui "$scr"
