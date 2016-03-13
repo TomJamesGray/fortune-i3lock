@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 scr='/tmp/screenshot.png'
 icon="lock-icon.png"
 # To change the font used add `-font $font`
