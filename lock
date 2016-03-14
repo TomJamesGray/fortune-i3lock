@@ -4,7 +4,9 @@ icon="lock-icon.png"
 # To change the font used add `-font $font`
 # After pointsize in the 'add fortune text section'
 # font="$HOME/.local/share/fonts/Aller_Lt.ttf"
-fortune=$(fortune -s)
+# Expand is used to convert the tabs to spaces which
+# are handled better by imageMagick
+fortune=$(expand -t 2 <(fortune -s))
 gradientColor='#E84C3D'
 gradientDimensions='1600x450'
 
