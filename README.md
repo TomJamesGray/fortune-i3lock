@@ -16,3 +16,13 @@ Dependencies:
 * scrot
 * i3lock
 * fortune
+
+### Customization
+
+[Material Design based](https://material.io/icons/#ic_lock) (and easily colorable) icon added by [RanzQ](https://github.com/RanzQ) (CC BY).
+
+For custom color, change the fill of the svg circle (`md-lock-icon.svg` line 42) and convert it to png ([inkscape](https://inkscape.org/en/) is useful).
+
+![Green version](3.png)
+
+Font here is `RobotoCondensed-Bold` from `fonts-roboto` and for transparent colors use `rgba()` (eg. `gradientColor='rgba(0,160,0,0.5)'`).
