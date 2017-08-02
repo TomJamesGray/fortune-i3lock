@@ -6,7 +6,7 @@ icon="lock-icon.png"
 # font="$HOME/.local/share/fonts/Aller_Lt.ttf"
 # Expand is used to convert the tabs to spaces which
 # are handled better by imageMagick
-fortune=$(expand -t 2 <(fortune))
+fortune=$(expand -t 2 <(fortune -s))
 gradientColor='#E84C3D'
 
 # get gradient dimensions from the screenshot
