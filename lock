@@ -10,11 +10,11 @@ fortune=$(expand -t 2 <(fortune -s))
 gradientColor='#E84C3D'
 
 # get gradient dimensions from the screenshot
-gradientDimensions=$(file $scr | cut -d, -f 2 | tr -d ' ') 
+read width height <<<$(file $scr | cut -d, -f 2 | tr -d ' ' | tr 'x' ' ')
 
 scrot "$scr"
 convert "$scr" -scale 10% -scale 1000%\
-	-size "$gradientDimensions" -gravity south-west \
+	-size "${width}x${height}" -gravity south-west \
 	gradient:none-"$gradientColor" -composite -matte \
 	"$icon" -gravity center -composite -matte \
 	-gravity center -pointsize 20 \
