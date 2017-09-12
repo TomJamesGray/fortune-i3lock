@@ -9,10 +9,13 @@ icon="lock-icon.png"
 fortune=$(expand -t 2 <(fortune -s))
 gradientColor='#E84C3D'
 
-# get gradient dimensions from the screenshot
-read width height <<<$(file $scr | cut -d, -f 2 | tr -d ' ' | tr 'x' ' ')
-
+# take a screenshot
 scrot "$scr"
+
+# get gradient dimensions directly from the screenshot
+read width height <<<$(file $scr | cut -d, -f 2 | tr -d ' ' | tr 'x' ' ')
+height=$((height / 2))
+
 convert "$scr" -scale 10% -scale 1000%\
 	-size "${width}x${height}" -gravity south-west \
 	gradient:none-"$gradientColor" -composite -matte \
